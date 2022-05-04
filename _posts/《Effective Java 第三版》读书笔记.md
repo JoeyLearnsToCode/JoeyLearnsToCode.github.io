@@ -1,8 +1,7 @@
 ---
-title : 《Effective Java 第三版》读书笔记
-date : 2022年5月4日
-tags: Java 读书笔记
-status: done
+title: 《Effective Java 第三版》读书笔记
+tags: Java 读书笔记 
+comments: true
 ---
 
 [原书（非官方翻译）](https://wizardforcel.gitbooks.io/effective-java-3rd-chinese/content/)

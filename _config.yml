@@ -59,12 +59,12 @@ user:
   bio: 后端开发
   email: zilin.wang.1024@gmail.com
   photo: /assets/img/profile.png
-  alt_link: JoeyLearnsToCode.github.io
+  alt_link: https://github.com/JoeyLearnsToCode/JoeyLearnsToCode.github.io
   social: # just leave the field blank or type in null, if you don't have a
           # particular social media account and it won't appear
     enabled: true  # turn this to true
     twitter: null
-    github: https://github.com/JoeyLearnsToCode 
+    github: JoeyLearnsToCode 
     youtube: null 
     linkedin: null  
     twitch: null
