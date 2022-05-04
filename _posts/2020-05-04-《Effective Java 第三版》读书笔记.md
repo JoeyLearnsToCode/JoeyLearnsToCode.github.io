@@ -4,6 +4,9 @@ tags: Java 读书笔记
 comments: true
 ---
 
+* TOC
+{:toc}
+
 [原书（非官方翻译）](https://wizardforcel.gitbooks.io/effective-java-3rd-chinese/content/)
 
 [原书附带源码](https://github.com/jbloch/effective-java-3e-source-code)
@@ -50,14 +53,14 @@ comments: true
 好理解，常见的单例实现方法有3种：
 1. 私有构造方法+公共静态INSTANCE属性。优点是API明确表示该类是一个单例：公共静态属性是final的，所以它总是包含相同的对象引用。 第二个好处是它更简单。不过要注意，API调用方实际上可以通过反射`AccessibleObject.setAccessible`来调用私有构造方法，如果要杜绝这种调用，可以在构造方法中检查一下INSTANCE是否已经有值，如果有则抛出异常。
 
-    ```java
-    // Singleton with public final field
-    public class Elvis{
-        public static final Elvis INSTANCE = new Elvis();
-        private Elvis() { ... }
-        public void leaveTheBuilding() { ... }
-    }
-    ```
+```java
+// Singleton with public final field
+public class Elvis{
+    public static final Elvis INSTANCE = new Elvis();
+    private Elvis() { ... }
+    public void leaveTheBuilding() { ... }
+}
+```
 
 1. 私有构造方法+私有静态INSTANCE属性+公共静态工厂方法。优点是静态工厂方法的具体实现细节可以改动（比如从全局单例改为线程单例）；如果需要，可以编写一个泛型单例工厂（generic singleton factory ）；最后一个优点是，在java 8中，可以用Elvis::getInstance这种函数式方法来表示`Supplier<Elvis>`，很简洁。
     注意，**单例类的所有实例属性（如果有）都要用transient修饰，而且要实现`readResolve`方法，防止序列化、反序列化创造出多个实例**。
